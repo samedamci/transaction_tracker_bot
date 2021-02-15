@@ -26,7 +26,7 @@ TOKEN=your_token_here
 
 + Build image itself.
 ```
-# docker build -t samedamci/searx_bot .
+# docker build -t samedamci/transaction_tracker_bot .
 ```
 + Run bot in container.
 ```
