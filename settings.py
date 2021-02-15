@@ -6,4 +6,7 @@ from dotenv import load_dotenv
 
 dotenv_path = join(dirname(__file__), "environment")
 load_dotenv(dotenv_path)
+
 TOKEN = os.getenv("TOKEN")
+
+SOURCE_URL = "https://github.com/samedamci/transaction_tracker_bot"

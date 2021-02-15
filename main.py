@@ -16,7 +16,7 @@ from telegram import (
 )
 import logging
 import json
-import settings
+from settings import TOKEN, SOURCE_URL
 import requests
 from uuid import uuid4
 
@@ -152,13 +152,16 @@ Bitcoin Transaction Tracking Bot
 To use this bot start typing
 @transaction_tracker_bot <transaction_hash>
 or select transaction from list of latest transactions.
-"""
+""",
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("Source Code", url=SOURCE_URL)]]
+        ),
     )
 
 
 def main():
     global updater
-    updater = Updater(settings.TOKEN, use_context=True)
+    updater = Updater(TOKEN, use_context=True)
     dispatcher = updater.dispatcher
     dispatcher.add_handler(CommandHandler(["start", "help"], start))
     dispatcher.add_handler(InlineQueryHandler(inline))
